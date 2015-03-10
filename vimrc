@@ -17,6 +17,8 @@ Plugin 'tpope/vim-bundler'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'jgdavey/tslime.vim'
+Plugin 'digitaltoad/vim-jade'
+Plugin 'elzr/vim-json'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -41,6 +43,10 @@ set hlsearch
 set background=dark
 set number
 set ic
+set nowrap
+
+set smarttab
+set expandtab
 
 " size of a hard tabstop
 set tabstop=2
@@ -50,7 +56,7 @@ set shiftwidth=2
 
 " a combination of spaces and tabs are used to simulate tab stops at a width
 " other than the (hard)tabstop
-"set softtabstop=2
+set softtabstop=2
 
 noremap ; :
 noremap <C-l> gt
