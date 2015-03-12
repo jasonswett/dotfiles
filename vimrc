@@ -20,6 +20,8 @@ Plugin 'jgdavey/tslime.vim'
 Plugin 'digitaltoad/vim-jade'
 Plugin 'elzr/vim-json'
 Plugin 'scrooloose/nerdtree'
+Plugin 'junegunn/fzf'
+Plugin 'vim-scripts/EasyGrep'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
