@@ -14,14 +14,19 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'L9'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-bundler'
+Plugin 'tpope/vim-endwise'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'jgdavey/tslime.vim'
 Plugin 'digitaltoad/vim-jade'
+Plugin 'curist/vim-angular-template'
 Plugin 'elzr/vim-json'
 Plugin 'scrooloose/nerdtree'
-Plugin 'junegunn/fzf'
 Plugin 'vim-scripts/EasyGrep'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'kien/ctrlp.vim'
+Plugin 'othree/yajs.vim'
+Plugin 'burnettk/vim-angular'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -60,6 +65,8 @@ set shiftwidth=2
 " a combination of spaces and tabs are used to simulate tab stops at a width
 " other than the (hard)tabstop
 set softtabstop=2
+
+set clipboard^=unnamed
 
 noremap ; :
 noremap <C-l> gt
