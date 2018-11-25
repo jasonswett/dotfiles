@@ -92,6 +92,8 @@ alias gpom='git push origin master'
 
 alias vi='vi -p'
 
+alias ppwd='pwd|pbcopy'
+
 alias deals='cd ~/projects/great_deals'
 alias snip='cd ~/projects/snip'
 alias lh='cd ~/projects/lunch_hub'
@@ -100,3 +102,12 @@ alias dp='cd ~/projects/dueprops.com'
 alias bio='cd ~/projects/maestro/BM43-Microfixation-cms'
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+alias b='~/.banjo/bin/banjo become nyx'
+
+alias bits='cd ~/Documents/ben_franklin_labs/clients/green_bits'
+alias mhnote='cd ~/Documents/ben_franklin_labs/clients/mednote/mednote'
+
+alias cwjwp='cd /Library/WebServer/Documents/cwj/wp-content/themes/sixfigurecoding'
+
+source /Users/jasonswett/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+eval "$($HOME/.banjo/bin/banjo init -)"

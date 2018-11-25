@@ -27,12 +27,16 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'kien/ctrlp.vim'
 Plugin 'othree/yajs.vim'
 Plugin 'burnettk/vim-angular'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'yalesov/vim-emblem'
+Plugin 'maksimr/vim-jsbeautify'
+Plugin 'mustache/vim-mustache-handlebars'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
-filetype plugin indent on    " required
+"filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
-"filetype plugin on
+filetype plugin on
 "
 " Brief help
 " :PluginList       - lists configured plugins
@@ -82,3 +86,10 @@ map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 
 noremap <C-n> :NERDTree<CR>
+
+noremap sp :set paste<CR>
+noremap snp :set nopaste<CR>
+
+set clipboard=unnamed
+
+vnoremap cp :w !pbcopy<CR><CR>
