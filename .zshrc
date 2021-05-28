@@ -112,16 +112,12 @@ alias rtb='cd /Users/jasonswett/Documents/code_with_jason/rails_testing_book'
 
 alias cwjwp='cd /Library/WebServer/Documents/cwj/wp-content/themes/codewithjason'
 
-source /Users/jasonswett/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-eval "$($HOME/.banjo/bin/banjo init -)"
-
 export PATH="$PATH:/Applications/calibre.app/Contents/console.app/Contents/MacOS"
 export PATH="$PATH:/usr/local/texlive/2018/bin/x86_64-darwin"
 export PATH="$PATH:~/bin"
 export PATH="/Users/jasonswett/Documents/ben_franklin_labs/clients/mednote/mednote:$PATH"
 
 export EDITOR='vim'
-eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"
 
 alias drw='time docker-compose run web'
 alias drspec='docker-compose run -e RAILS_ENV=test web rspec'
@@ -145,3 +141,7 @@ armageddon() {
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+
+export PATH=/opt/homebrew/bin:$PATH
+source /Users/jasonswett/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /Users/jasonswett/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
