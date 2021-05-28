@@ -81,10 +81,12 @@ source $ZSH/oh-my-zsh.sh
 
 alias gs='git status '
 alias ga='git add '
-alias gb='git branch '
+alias gb='git branch'
+alias gbb='git branch | cat'
 alias gc='git commit'
 alias gca='git commit -a'
 alias gd='git diff'
+alias gdc='git diff --cached'
 alias go='git checkout '
 alias gk='gitk --all&'
 alias gx='gitx --all'
@@ -94,20 +96,50 @@ alias vi='vi -p'
 
 alias ppwd='pwd|pbcopy'
 
-alias deals='cd ~/projects/great_deals'
-alias snip='cd ~/projects/snip'
-alias lh='cd ~/projects/lunch_hub'
-alias fv='cd ~/projects/fv-rails-api'
-alias dp='cd ~/projects/dueprops.com'
-alias bio='cd ~/projects/maestro/BM43-Microfixation-cms'
+alias snip='cd ~/Documents/code/snip'
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 alias b='~/.banjo/bin/banjo become nyx'
 
-alias bits='cd ~/Documents/ben_franklin_labs/clients/green_bits'
 alias mhnote='cd ~/Documents/ben_franklin_labs/clients/mednote/mednote'
+alias mis='cd ~/Documents/code_with_jason/mississippi_dot_com'
+alias mot='cd ~/exosuit/mothership'
+alias rtfb='cd ~/Documents/code_with_jason/rails_testing_for_beginners'
+alias xx='cd ~/exosuit/exosuit'
+alias dw='cd ~/Documents/code_with_jason/production_rails/discuss_with'
+alias cluck='cd ~/Documents/code_with_jason/cluckr'
+alias cwj='cd ~/Documents/code_with_jason'
+alias rtb='cd /Users/jasonswett/Documents/code_with_jason/rails_testing_book'
 
-alias cwjwp='cd /Library/WebServer/Documents/cwj/wp-content/themes/sixfigurecoding'
+alias cwjwp='cd /Library/WebServer/Documents/cwj/wp-content/themes/codewithjason'
 
 source /Users/jasonswett/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 eval "$($HOME/.banjo/bin/banjo init -)"
+
+export PATH="$PATH:/Applications/calibre.app/Contents/console.app/Contents/MacOS"
+export PATH="$PATH:/usr/local/texlive/2018/bin/x86_64-darwin"
+export PATH="$PATH:~/bin"
+export PATH="/Users/jasonswett/Documents/ben_franklin_labs/clients/mednote/mednote:$PATH"
+
+export EDITOR='vim'
+eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"
+
+alias drw='time docker-compose run web'
+alias drspec='docker-compose run -e RAILS_ENV=test web rspec'
+alias up='docker-compose up'
+alias down='docker-compose down'
+
+alias rspec='bundle exec rspec'
+
+removecontainers() {
+    docker stop $(docker ps -aq)
+    docker rm $(docker ps -aq)
+}
+
+armageddon() {
+    removecontainers
+    docker network prune -f
+    docker rmi -f $(docker images --filter dangling=true -qa)
+    docker volume rm $(docker volume ls --filter dangling=true -q)
+    docker rmi -f $(docker images -qa)
+}
