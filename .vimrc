@@ -1,95 +1,99 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-
-Plugin 'tpope/vim-fugitive'
-Plugin 'L9'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-bundler'
-Plugin 'tpope/vim-endwise'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'thoughtbot/vim-rspec'
-Plugin 'jgdavey/tslime.vim'
-Plugin 'digitaltoad/vim-jade'
-Plugin 'curist/vim-angular-template'
-Plugin 'elzr/vim-json'
-Plugin 'scrooloose/nerdtree'
-Plugin 'vim-scripts/EasyGrep'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'kien/ctrlp.vim'
-Plugin 'othree/yajs.vim'
-Plugin 'burnettk/vim-angular'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'yalesov/vim-emblem'
-Plugin 'maksimr/vim-jsbeautify'
-Plugin 'mustache/vim-mustache-handlebars'
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-"filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-filetype plugin on
+" MUST INSTALL + CONFIGURE Vim Plug (plug-in manager) in order to use this
+" .vimrc file
+" https://github.com/junegunn/vim-plug
 "
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+" Run `PlugInstall` from vim command mode to install the plug-ins.
 "
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+" Be sure to read the documentation of the following plug-ins to ensure
+" maximum efficiency
 
-syntax enable
-filetype plugin indent on
 
-syntax on
-set hlsearch
-set background=dark
-set number
-set ic
-set nowrap
+call plug#begin('~/.vim/plugged')
 
-set smarttab
-set expandtab
+Plug 'tpope/vim-dispatch'
 
-" size of a hard tabstop
-set tabstop=2
+" tslime.vim enables Send_to_Tmux.
+Plug 'jgdavey/tslime.vim'
 
-" size of an "indent"
-set shiftwidth=2
+" Invoke rspec tests from within vim
+Plug 'thoughtbot/vim-rspec'
 
-" a combination of spaces and tabs are used to simulate tab stops at a width
-" other than the (hard)tabstop
-set softtabstop=2
+" Add these keybindings to your personal ~/.vimrc if desired.
+" map <Leader>t :call RunCurrentSpecFile()<CR>
+" map <Leader>s :call RunNearestSpec()<CR>
+" map <Leader>l :call RunLastSpec()<CR>
+" map <Leader>a :call RunAllSpecs()<CR>
 
-set clipboard^=unnamed
+" Necessary Ruby and Rails development plug-ins
+Plug 'tpope/vim-rails'
+Plug 'vim-ruby/vim-ruby'
 
-noremap ; :
-noremap <C-l> gt
-noremap <C-h> gT
+" A plugin that SHOULD be a default Vim/NeoVim feature.
+" Most vim-like plugin ever made.
+Plug 'tpope/vim-surround'
 
-" This tells vim-rspec to use Send_to_Tmux to run the selected specs.
-let g:rspec_command = 'call Send_to_Tmux("rspec {spec}\n")'
+Plug 'tpope/vim-endwise'
 
-" vim-rspec mappings
+" Unix commands for Vim. (Ex: `Rename` current file)
+Plug 'tpope/vim-eunuch'
+
+" Have the . (period) key repeat plugin mappings
+Plug 'tpope/vim-repeat'
+
+" Git Tools
+Plug 'tpope/vim-fugitive'
+
+" Split/Join Args and Lists (invaluable formatting tool - Make sure to use it!)
+Plug 'AndrewRadev/splitjoin.vim'
+
+" Typical modern snippets for most languages
+Plug 'honza/vim-snippets'
+
+" Fuzzy Finder
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+
+call plug#end()
+
+" Include project-specific files
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 
-noremap <C-n> :NERDTree<CR>
+" For fzf searching
+noremap <C-p> :Files<CR>
+noremap <silent> <Leader>ag :Ag <C-R><C-W><CR>
+
+let g:rspec_command = $VIM_RSPEC_COMMAND_HEADLESS
+
+noremap ; :
+
+noremap <C-l> gt
+noremap <C-h> gT
+
+" Don't wrap lines
+set nowrap
+
+" Use two spaces for indentation
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set expandtab
+
+syntax on
+set background=dark
+
+" Highlight searches
+set hlsearch
+
+" Show line numbers
+set number
+
+" Allow yanking to the clipboard
+set clipboard^=unnamed
+
+set ic
 
 noremap sp :set paste<CR>
 noremap snp :set nopaste<CR>
-
-set clipboard=unnamed
-
-vnoremap cp :w !pbcopy<CR><CR>

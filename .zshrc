@@ -108,9 +108,10 @@ alias xx='cd ~/exosuit/exosuit'
 alias dw='cd ~/Documents/code_with_jason/production_rails/discuss_with'
 alias cluck='cd ~/Documents/code_with_jason/cluckr'
 alias cwj='cd ~/Documents/code_with_jason'
-alias rtb='cd /Users/jasonswett/Documents/code_with_jason/rails_testing_book'
-
-alias cwjwp='cd /Library/WebServer/Documents/cwj/wp-content/themes/codewithjason'
+alias cgrt='cd /Users/jasonswett/Documents/code_with_jason/cgrt'
+alias dfb='cd /Users/jasonswett/Documents/code/docker_for_beginners'
+alias cwjwp='cd /Users/jasonswett/Documents/code/sfcoding'
+alias scratch='cd /Users/jasonswett/Documents/code/scratch'
 
 export PATH="$PATH:/Applications/calibre.app/Contents/console.app/Contents/MacOS"
 export PATH="$PATH:/usr/local/texlive/2018/bin/x86_64-darwin"
@@ -119,12 +120,17 @@ export PATH="/Users/jasonswett/Documents/ben_franklin_labs/clients/mednote/medno
 
 export EDITOR='vim'
 
-alias drw='time docker-compose run web'
-alias drspec='docker-compose run -e RAILS_ENV=test web rspec'
-alias up='docker-compose up'
-alias down='docker-compose down'
+alias drw='time docker compose run web'
+alias drspec='docker compose run -e RAILS_ENV=test web rspec'
+alias up='docker compose up'
+alias down='docker compose down'
 
 alias rspec='bundle exec rspec'
+
+alias f='vim $(fzf)'
+
+export VIM_RSPEC_COMMAND_HEADLESS='call Send_to_Tmux("rspec {spec}\n")'
+export VIM_RSPEC_COMMAND_NON_HEADLESS='call Send_to_Tmux("SHOW_BROWSER=true rspec {spec}\n")'
 
 removecontainers() {
     docker stop $(docker ps -aq)
@@ -142,6 +148,13 @@ armageddon() {
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 
+# for softcover
+export PATH=/Library/TeX/texbin:/Applications/calibre.app/Contents/MacOS:$PATH
+
 export PATH=/opt/homebrew/bin:$PATH
 source /Users/jasonswett/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /Users/jasonswett/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+export PATH=$PATH:~/bin
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

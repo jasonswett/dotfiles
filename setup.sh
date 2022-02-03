@@ -7,3 +7,6 @@ echo "source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> 
 
 ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
 tmux source-file ~/.tmux.conf
+
+mkdir -p ~/.config/tmuxinator
+ln -s ~/dotfiles/.config/tmuxinator/mhnote.yml ~/.config/tmuxinator/mhnote.yml
