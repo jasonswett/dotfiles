@@ -112,6 +112,7 @@ alias cgrt='cd /Users/jasonswett/Documents/code_with_jason/cgrt'
 alias dfb='cd /Users/jasonswett/Documents/code/docker_for_beginners'
 alias cwjwp='cd /Users/jasonswett/Documents/code/sfcoding'
 alias scratch='cd /Users/jasonswett/Documents/code/scratch'
+alias videos='cd /Users/jasonswett/Documents/code_with_jason/videos'
 
 export PATH="$PATH:/Applications/calibre.app/Contents/console.app/Contents/MacOS"
 export PATH="$PATH:/usr/local/texlive/2018/bin/x86_64-darwin"
@@ -151,9 +152,13 @@ export PATH="$PATH:$HOME/.rvm/bin"
 # for softcover
 export PATH=/Library/TeX/texbin:/Applications/calibre.app/Contents/MacOS:$PATH
 
+export PATH=/Users/jasonswett/Library/Python/3.9/bin:$PATH
+
 export PATH=/opt/homebrew/bin:$PATH
 source /Users/jasonswett/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /Users/jasonswett/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+export PATH="/opt/homebrew/opt/openssl@3/bin:$PATH"
 
 export PATH=$PATH:~/bin
 

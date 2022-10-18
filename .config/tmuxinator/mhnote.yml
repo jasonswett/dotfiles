@@ -47,13 +47,12 @@ windows:
       layout: main-vertical
       panes:
         - rails s
-        - docker compose up
+        - foreman start -f Procfile.dev
   - code:
       layout: 539f,189x48,0,0{124x48,0,0,1,64x48,125,0,3}
       panes:
         -
         -
-      server: docker-compose up
 
   - console:
       panes:
