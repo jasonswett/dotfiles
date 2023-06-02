@@ -153,7 +153,6 @@ export PATH=/Library/TeX/texbin:/Applications/calibre.app/Contents/MacOS:$PATH
 
 export PATH=/opt/homebrew/bin:$PATH
 source /Users/jasonswett/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /Users/jasonswett/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 export PATH=$PATH:~/bin
 

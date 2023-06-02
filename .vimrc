@@ -97,3 +97,5 @@ set ic
 
 noremap sp :set paste<CR>
 noremap snp :set nopaste<CR>
+
+set guicursor=i:block
