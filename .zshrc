@@ -156,7 +156,6 @@ export PATH=/Users/jasonswett/Library/Python/3.9/bin:$PATH
 
 export PATH=/opt/homebrew/bin:$PATH
 source /Users/jasonswett/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /Users/jasonswett/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 export PATH="/opt/homebrew/opt/openssl@3/bin:$PATH"
 
