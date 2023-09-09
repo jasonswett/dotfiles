@@ -3,15 +3,17 @@ let &packpath = &runtimepath
 source ~/.vimrc
 
 call plug#begin()
-Plug 'tpope/vim-dispatch'
 Plug 'neovim/nvim-lspconfig'
+Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rails'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'codota/tabnine-nvim', { 'do': './dl_binaries.sh' }
 call plug#end()
 
 nnoremap Y Y$
+nnoremap <leader>y :let @+=expand('%')<CR>
 
 lua << EOF
 local nvim_lsp = require('lspconfig')
@@ -60,16 +62,4 @@ for _, lsp in ipairs(servers) do
 	}
   }
 end
-EOF
-
-lua << EOF
-require('tabnine').setup({
-  disable_auto_comment=true,
-  accept_keymap="<Tab>",
-  dismiss_keymap = "<C-]>",
-  debounce_ms = 800,
-  suggestion_color = {gui = "#808080", cterm = 244},
-  exclude_filetypes = {"TelescopePrompt"},
-  log_file_path = nil, -- absolute path to Tabnine log file
-})
 EOF
