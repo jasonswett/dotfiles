@@ -93,6 +93,7 @@ alias gx='gitx --all'
 alias gpom='git push origin master'
 
 alias vi='vi -p'
+alias nvim='nvim -p'
 
 alias ppwd='pwd|pbcopy'
 
@@ -130,6 +131,8 @@ alias rspec='bundle exec rspec'
 
 alias f='vim $(fzf)'
 
+source ~/.config/openai
+
 export VIM_RSPEC_COMMAND_HEADLESS='call Send_to_Tmux("rspec {spec}\n")'
 export VIM_RSPEC_COMMAND_NON_HEADLESS='call Send_to_Tmux("SHOW_BROWSER=true rspec {spec}\n")'
 
@@ -162,3 +165,4 @@ export PATH="/opt/homebrew/opt/openssl@3/bin:$PATH"
 export PATH=$PATH:~/bin
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export PATH="/usr/local/opt/openjdk@11/bin:$PATH"
