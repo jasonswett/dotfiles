@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/jasonswett/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -109,16 +109,16 @@ alias xx='cd ~/exosuit/exosuit'
 alias dw='cd ~/Documents/code_with_jason/production_rails/discuss_with'
 alias cluck='cd ~/Documents/code_with_jason/cluckr'
 alias cwj='cd ~/Documents/code_with_jason'
-alias cgrt='cd /Users/jasonswett/Documents/code_with_jason/cgrt'
-alias dfb='cd /Users/jasonswett/Documents/code/docker_for_beginners'
-alias cwjwp='cd /Users/jasonswett/Documents/code/sfcoding'
-alias scratch='cd /Users/jasonswett/Documents/code/scratch'
-alias videos='cd /Users/jasonswett/Documents/code_with_jason/videos'
+alias cgrt='cd ~/Documents/code_with_jason/cgrt'
+alias dfb='cd ~/Documents/code/docker_for_beginners'
+alias cwjwp='cd ~/Documents/code/sfcoding'
+alias scratch='cd ~/Documents/code/scratch'
+alias videos='cd ~/Documents/code_with_jason/videos'
 
 export PATH="$PATH:/Applications/calibre.app/Contents/console.app/Contents/MacOS"
 export PATH="$PATH:/usr/local/texlive/2018/bin/x86_64-darwin"
 export PATH="$PATH:~/bin"
-export PATH="/Users/jasonswett/Documents/ben_franklin_labs/clients/mednote/mednote:$PATH"
+export PATH="~/Documents/ben_franklin_labs/clients/mednote/mednote:$PATH"
 
 export EDITOR='vim'
 
@@ -155,10 +155,10 @@ export PATH="$PATH:$HOME/.rvm/bin"
 # for softcover
 export PATH=/Library/TeX/texbin:/Applications/calibre.app/Contents/MacOS:$PATH
 
-export PATH=/Users/jasonswett/Library/Python/3.9/bin:$PATH
+export PATH=~/Library/Python/3.9/bin:$PATH
 
 export PATH=/opt/homebrew/bin:$PATH
-source /Users/jasonswett/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 export PATH="/opt/homebrew/opt/openssl@3/bin:$PATH"
 
