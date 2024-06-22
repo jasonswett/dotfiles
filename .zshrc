@@ -45,7 +45,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-syntax-highlighting)
+plugins=(git)
 
 # User configuration
 
@@ -131,8 +131,6 @@ alias rspec='bundle exec rspec'
 
 alias f='vim $(fzf)'
 
-source ~/.config/openai
-
 export VIM_RSPEC_COMMAND_HEADLESS='call Send_to_Tmux("rspec {spec}\n")'
 export VIM_RSPEC_COMMAND_NON_HEADLESS='call Send_to_Tmux("SHOW_BROWSER=true rspec {spec}\n")'
 
@@ -170,3 +168,9 @@ export PATH="/usr/local/opt/openjdk@11/bin:$PATH"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+source $HOME/.asdf/asdf.sh
+fpath=(${ASDF_DIR}/completions $fpath)
+autoload -Uz compinit && compinit
+
+export AWS_PROFILE=huntress

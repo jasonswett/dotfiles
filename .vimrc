@@ -99,3 +99,6 @@ noremap sp :set paste<CR>
 noremap snp :set nopaste<CR>
 
 set guicursor=i:block
+
+set foldmethod=indent
+set foldlevelstart=99
