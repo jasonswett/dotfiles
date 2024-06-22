@@ -78,7 +78,14 @@ cmp.setup({
     end,
     ['<C-Space>'] = cmp.mapping.complete(),
     ['<C-e>'] = cmp.mapping.close(),
-    ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item
+    ['<CR>'] = function(fallback)
+      if cmp.visible() and cmp.confirm({ select = true }) then
+        -- Switch to command mode after confirming a completion
+        vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<C-\\><C-N>', true, true, true), 'n', true)
+      else
+        fallback()
+      end
+    end,
   },
   sources = {
     { name = 'nvim_lsp' },
@@ -88,23 +95,20 @@ cmp.setup({
 -- Initialize the LSP client
 local lspconfig = require('lspconfig')
 
+-- Function to set key mappings after LSP attaches to buffer
+local on_attach = function(client, bufnr)
+  local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+  local opts = { noremap = true, silent = true }
+
+  -- Set key mappings
+  buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
+  buf_set_keymap('n', 'gr', '<Cmd>lua vim.lsp.buf.references()<CR>', opts)
+end
+
 -- Configure Solargraph
 lspconfig.solargraph.setup {
   capabilities = require('cmp_nvim_lsp').default_capabilities(),
-  settings = {
-    solargraph = {
-      diagnostics = false,
-      completion = true,
-    }
-  }
-}
-
--- Enable completion with built-in LSP capabilities
-vim.o.completeopt = "menuone,noselect"
-
-require'lspconfig'.solargraph.setup{
-  capabilities = require('cmp_nvim_lsp').default_capabilities(),
-  cmd = { 'solargraph', 'stdio' },
+  on_attach = on_attach,
   settings = {
     solargraph = {
       diagnostics = false,
@@ -116,3 +120,7 @@ require'lspconfig'.solargraph.setup{
     }
   }
 }
+
+-- Enable completion with built-in LSP capabilities
+vim.o.completeopt = "menuone,noselect"
+EOF
