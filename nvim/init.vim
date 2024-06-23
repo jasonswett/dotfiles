@@ -107,6 +107,7 @@ end
 
 -- Configure Solargraph
 lspconfig.solargraph.setup {
+  root_dir = lspconfig.util.root_pattern('Gemfile', '.git'),
   capabilities = require('cmp_nvim_lsp').default_capabilities(),
   on_attach = on_attach,
   settings = {
