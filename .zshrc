@@ -161,6 +161,7 @@ source ~/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export PATH="/opt/homebrew/opt/openssl@3/bin:$PATH"
 
 export PATH=$PATH:~/bin
+export PATH=$PATH:/usr/local/share/dotnet
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export PATH="/usr/local/opt/openjdk@11/bin:$PATH"
